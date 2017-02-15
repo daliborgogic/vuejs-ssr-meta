@@ -15,7 +15,6 @@
 </template>
 
 <script>
-const inBrowser = typeof window !== 'undefined' && Object.prototype.toString.call(window) !== '[object Object]';
 export default {
   computed: {
     title() {
@@ -24,11 +23,10 @@ export default {
   },
   watch: {
     title () {  
-      if(inBrowser) {
+      if(!this.$isServer) {
         document.title = this.$store.state.head.title
       }       
     }
-    
   }
 }
 </script>
