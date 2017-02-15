@@ -13,6 +13,8 @@ export default new Router({
   routes: [
     { path: '/', component: HomeView },
     { path: '/about', component: AboutView },
-    { path: '/contact', component: ContactView }
+    { path: '/contact', component: ContactView },
+    // Not Found
+    { path: '*', redirect: '/' }
   ]
 })
