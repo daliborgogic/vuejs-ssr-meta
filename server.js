@@ -75,7 +75,7 @@ app.get('*', (req, res) => {
   const renderStream = renderer.renderToStream(context)
 
   renderStream.once('data', () => {
-    let protocol = (!/https/.test(req.protocol) ? 'http' : 'https')
+    let protocol = (req.protocol == 'http' ? 'http' : 'https')
     const replace = '<!-- HEAD -->'
     let replaceWith = `<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
