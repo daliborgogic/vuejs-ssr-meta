@@ -19,3 +19,11 @@ npm run build
 # serve in production mode
 npm start
 ```
+
+Open Graph Object Debbuger
+https://developers.facebook.com/tools/debug/og/object/
+
+Card validator
+https://cards-dev.twitter.com/validator
+
+
