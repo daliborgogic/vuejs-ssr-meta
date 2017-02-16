@@ -71,11 +71,9 @@ app.get('*', (req, res) => {
   res.setHeader('Server', serverInfo)
 
   var s = Date.now()
-  const context = { url: req.url }
+  const context = { url: req.url}
   const renderStream = renderer.renderToStream(context)
-
   renderStream.once('data', () => {
-    let protocol = (req.protocol == 'https') ? 'https' : 'http'
     const replace = '<!-- HEAD -->'
     let replaceWith = `<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -88,8 +86,8 @@ app.get('*', (req, res) => {
 <meta name="description" content="${context.initialState.head.description}" />
 <meta property="og:title" content="${context.initialState.head.title}">
 <meta property="og:description" content="${context.initialState.head.description}">
-<meta property="og:image" content="${protocol}://${req.get('host')}/public/${context.initialState.head.image}">
-<meta property="og:url" content="${protocol}://${req.get('host') + req.originalUrl}">
+<meta property="og:image" content="https://${req.get('host')}/public/${context.initialState.head.image}">
+<meta property="og:url" content="https://${req.get('host') + req.originalUrl}">
 <meta name="twitter:card" content="summary_large_image">`
     res.write(indexHTML.head.replace(replace, replaceWith))
   })
