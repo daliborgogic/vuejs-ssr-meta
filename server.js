@@ -88,7 +88,7 @@ app.get('*', (req, res) => {
 <meta property="og:title" content="${context.initialState.head.title}">
 <meta property="og:description" content="${context.initialState.head.description}">
 <meta property="og:image" content="https://${req.get('host')}/public/${context.initialState.head.image}">
-<meta property="og:url" content="https://${req.get('host')}">
+<meta property="og:url" content="${req.protocol + '://' + req.get('host') + req.originalUrl}">
 <meta name="twitter:card" content="summary_large_image">`
     res.write(indexHTML.head.replace(replace, replaceWith))
   })
