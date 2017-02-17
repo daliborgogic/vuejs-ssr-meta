@@ -1,1 +1,16 @@
-<!doctype html><html lang="en"><head><!-- HEAD --></head><body><!-- APP --></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- HEAD -->
+    <% for (var chunk of webpack.chunks) { %>
+      <% for (var file of chunk.files) { %>
+        <% if (file.match(/\.(js|css)$/)) { %>
+          <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+        <% } %>
+      <% } %>
+    <% } %>
+  </head>
+  <body>
+    <!-- APP -->
+  </body>
+</html>
