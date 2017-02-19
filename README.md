@@ -1,6 +1,6 @@
 # Vuejs Server Side Rendering Meta
 
-[Demo](https://vuejs-ssr-meta-rzyjpytqlj.now.sh/)
+[Demo](https://vuejs-ssr-meta-jxpcrsfdul.now.sh/)
 
 ## Build Setup
 
