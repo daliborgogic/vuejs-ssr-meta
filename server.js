@@ -88,7 +88,16 @@ app.get('*', (req, res) => {
 <meta property="og:description" content="${context.initialState.head.description}">
 <meta property="og:image" content="https://${req.get('host')}/public/${context.initialState.head.image}">
 <meta property="og:url" content="https://${req.get('host') + req.originalUrl}">
-<meta name="twitter:card" content="summary_large_image">`
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-########-#', 'auto');
+  ga('set', 'page', '${req.originalUrl}');
+  ga('send', 'pageview');
+</script>`
     res.write(indexHTML.head.replace(replace, replaceWith))
   })
 
