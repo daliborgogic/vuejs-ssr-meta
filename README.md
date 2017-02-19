@@ -26,4 +26,9 @@ https://developers.facebook.com/tools/debug/og/object/
 Card validator
 https://cards-dev.twitter.com/validator
 
+### ToDo:
 
+- [x] meta
+- [ ] robots.txt
+- [ ] sitemap.xml
+- [x] tracking code
