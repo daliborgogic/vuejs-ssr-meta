@@ -4,6 +4,7 @@ const express = require('express')
 const favicon = require('serve-favicon')
 const compression = require('compression')
 const serialize = require('serialize-javascript')
+const helmet = require('helmet')
 const resolve = file => path.resolve(__dirname, file)
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -55,6 +56,7 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: cache && isProd ? 60 * 60 * 24 * 30 : 0
 })
 
+app.use(helmet())
 app.use(compression({ threshold: 0 }))
 app.use(favicon('./public/logo-48.png'))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
@@ -128,7 +130,7 @@ app.get('*', (req, res) => {
   })
 })
 
-const port = process.env.PORT || 3003
+const port = process.env.PORT || 8080
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`)
 })
