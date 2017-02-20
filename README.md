@@ -29,6 +29,6 @@ https://cards-dev.twitter.com/validator
 ### ToDo:
 
 - [x] meta
-- [ ] robots.txt
+- [x] robots.txt
 - [ ] sitemap.xml
 - [x] tracking code
