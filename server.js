@@ -59,10 +59,8 @@ const serve = (path, cache) => express.static(resolve(path), {
 app.use(helmet())
 app.use(favicon('./public/logo-48.png'))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
-app.use('/manifest.json', serve('./manifest.json'))
-app.use('/robots.txt', serve('./robots.txt'))
 app.use('/dist', serve('./dist'))
-app.use('/public', serve('./public'))
+app.use(express.static('public'))
 
 app.get('*', (req, res) => {
   if (!renderer) {
