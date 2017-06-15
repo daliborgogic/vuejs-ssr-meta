@@ -1,4 +1,8 @@
-# Vuejs Server Side Rendering Meta
+# Deprecated
+
+> Please use [repo](https://github.com/daliborgogic/vue-meta)
+
+## Vuejs Server Side Rendering Meta
 
 [Demo](https://vuejs-ssr-meta-jxpcrsfdul.now.sh/)
 
